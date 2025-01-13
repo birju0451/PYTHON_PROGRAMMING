@@ -1,0 +1,806 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ec88ebdb-9490-46ff-a6b4-2c9e4f65f2bd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np \n",
+    "import pandas as pd\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "42780b38-799d-4975-9b3c-fcbf3e71e9ec",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "dict1={\n",
+    "    \"name\":['birju','raushan','chandan','sam'],\n",
+    "    \"money\":[1200,600,700,300],\n",
+    "    \"city\":['muzaffarpur','darbhanga','darbhanga','patna']\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "5ad89f80-9e0d-465b-b3ee-0e9c91f45a04",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "info=pd.DataFrame(dict1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "f626d60a-ce11-41a3-bec9-0aecaebedaf9",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>name</th>\n",
+       "      <th>money management</th>\n",
+       "      <th>city</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>birju</td>\n",
+       "      <td>1200</td>\n",
+       "      <td>muzaffarpur</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>raushan</td>\n",
+       "      <td>600</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>chandan</td>\n",
+       "      <td>700</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>sam</td>\n",
+       "      <td>300</td>\n",
+       "      <td>patna</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "      name  money management         city\n",
+       "0    birju              1200  muzaffarpur\n",
+       "1  raushan               600    darbhanga\n",
+       "2  chandan               700    darbhanga\n",
+       "3      sam               300        patna"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "info\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "e06f89d7-d407-44eb-900d-b41f0423ca17",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "info.to_csv('birju.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "4ea0efbf-49a3-439c-aa1b-e9446ceae78d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "info.to_csv('birju_index_false.csv',index=False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "6d9ea170-f514-4a46-99fe-08ff54e88a50",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>name</th>\n",
+       "      <th>money management</th>\n",
+       "      <th>city</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>birju</td>\n",
+       "      <td>1200</td>\n",
+       "      <td>muzaffarpur</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>raushan</td>\n",
+       "      <td>600</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "      name  money management         city\n",
+       "0    birju              1200  muzaffarpur\n",
+       "1  raushan               600    darbhanga"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "info.head(2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "1e89dc8e-2c1f-4b02-b6ad-56ef87db4266",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>name</th>\n",
+       "      <th>money management</th>\n",
+       "      <th>city</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>chandan</td>\n",
+       "      <td>700</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>sam</td>\n",
+       "      <td>300</td>\n",
+       "      <td>patna</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "      name  money management       city\n",
+       "2  chandan               700  darbhanga\n",
+       "3      sam               300      patna"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "info.tail(2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "c10b635e-1c93-4c45-80ca-b268a999e06d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>money management</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>count</th>\n",
+       "      <td>4.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>mean</th>\n",
+       "      <td>700.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>std</th>\n",
+       "      <td>374.165739</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>min</th>\n",
+       "      <td>300.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>25%</th>\n",
+       "      <td>525.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>50%</th>\n",
+       "      <td>650.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>75%</th>\n",
+       "      <td>825.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>max</th>\n",
+       "      <td>1200.000000</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "       money management\n",
+       "count          4.000000\n",
+       "mean         700.000000\n",
+       "std          374.165739\n",
+       "min          300.000000\n",
+       "25%          525.000000\n",
+       "50%          650.000000\n",
+       "75%          825.000000\n",
+       "max         1200.000000"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "info.describe()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "d0262e52-8a47-4874-a45d-336262f98eff",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "birju=pd.read_csv('birju.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "cc785e08-22ba-426d-ab57-027abceda225",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Unnamed: 0</th>\n",
+       "      <th>name</th>\n",
+       "      <th>money management</th>\n",
+       "      <th>city</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>0</td>\n",
+       "      <td>birju</td>\n",
+       "      <td>1200</td>\n",
+       "      <td>muzaffarpur</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>1</td>\n",
+       "      <td>raushan</td>\n",
+       "      <td>600</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2</td>\n",
+       "      <td>chandan</td>\n",
+       "      <td>700</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>3</td>\n",
+       "      <td>sam</td>\n",
+       "      <td>300</td>\n",
+       "      <td>patna</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   Unnamed: 0     name  money management         city\n",
+       "0           0    birju              1200  muzaffarpur\n",
+       "1           1  raushan               600    darbhanga\n",
+       "2           2  chandan               700    darbhanga\n",
+       "3           3      sam               300        patna"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "birju"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "72856dcb-c74c-48ba-994d-2ef0ca17fba0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "C:\\Users\\birju\\AppData\\Local\\Temp\\ipykernel_18912\\2275177900.py:1: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!\n",
+      "You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.\n",
+      "A typical example is when you are setting values in a column of a DataFrame, like:\n",
+      "\n",
+      "df[\"col\"][row_indexer] = value\n",
+      "\n",
+      "Use `df.loc[row_indexer, \"col\"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.\n",
+      "\n",
+      "See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
+      "\n",
+      "  birju['money management'][3]=1300\n",
+      "C:\\Users\\birju\\AppData\\Local\\Temp\\ipykernel_18912\\2275177900.py:1: SettingWithCopyWarning: \n",
+      "A value is trying to be set on a copy of a slice from a DataFrame\n",
+      "\n",
+      "See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
+      "  birju['money management'][3]=1300\n"
+     ]
+    }
+   ],
+   "source": [
+    "birju['money management'][3]=1300"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "8d37bc26-d414-45b6-ac4e-193a39168837",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Unnamed: 0</th>\n",
+       "      <th>name</th>\n",
+       "      <th>money management</th>\n",
+       "      <th>city</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>0</td>\n",
+       "      <td>birju</td>\n",
+       "      <td>1200</td>\n",
+       "      <td>muzaffarpur</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>1</td>\n",
+       "      <td>raushan</td>\n",
+       "      <td>600</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2</td>\n",
+       "      <td>chandan</td>\n",
+       "      <td>700</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>3</td>\n",
+       "      <td>sam</td>\n",
+       "      <td>1300</td>\n",
+       "      <td>patna</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   Unnamed: 0     name  money management         city\n",
+       "0           0    birju              1200  muzaffarpur\n",
+       "1           1  raushan               600    darbhanga\n",
+       "2           2  chandan               700    darbhanga\n",
+       "3           3      sam              1300        patna"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "birju"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "45be2e79-9f26-465b-8d0d-84e3cd030b62",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "birju.to_csv('birju.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "1119a42a-121f-4e23-9ef2-b817a8d4ba63",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "birju.index=['first','second','third','fourth']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "8ff3560f-ece2-46b1-a078-35a3252e1adc",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Unnamed: 0</th>\n",
+       "      <th>name</th>\n",
+       "      <th>money management</th>\n",
+       "      <th>city</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>first</th>\n",
+       "      <td>0</td>\n",
+       "      <td>birju</td>\n",
+       "      <td>1200</td>\n",
+       "      <td>muzaffarpur</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>second</th>\n",
+       "      <td>1</td>\n",
+       "      <td>raushan</td>\n",
+       "      <td>600</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>third</th>\n",
+       "      <td>2</td>\n",
+       "      <td>chandan</td>\n",
+       "      <td>700</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>fourth</th>\n",
+       "      <td>3</td>\n",
+       "      <td>sam</td>\n",
+       "      <td>1300</td>\n",
+       "      <td>patna</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "        Unnamed: 0     name  money management         city\n",
+       "first            0    birju              1200  muzaffarpur\n",
+       "second           1  raushan               600    darbhanga\n",
+       "third            2  chandan               700    darbhanga\n",
+       "fourth           3      sam              1300        patna"
+      ]
+     },
+     "execution_count": 24,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "birju\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "e5d7db40-da5e-4806-9e1e-df85929228d8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "birju.column=['first','second','third','fourth']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "0bf8a94c-6088-4609-9641-d0a4e8e3079c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Unnamed: 0</th>\n",
+       "      <th>name</th>\n",
+       "      <th>money management</th>\n",
+       "      <th>city</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>first</th>\n",
+       "      <td>0</td>\n",
+       "      <td>birju</td>\n",
+       "      <td>1200</td>\n",
+       "      <td>muzaffarpur</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>second</th>\n",
+       "      <td>1</td>\n",
+       "      <td>raushan</td>\n",
+       "      <td>600</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>third</th>\n",
+       "      <td>2</td>\n",
+       "      <td>chandan</td>\n",
+       "      <td>700</td>\n",
+       "      <td>darbhanga</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>fourth</th>\n",
+       "      <td>3</td>\n",
+       "      <td>sam</td>\n",
+       "      <td>1300</td>\n",
+       "      <td>patna</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "        Unnamed: 0     name  money management         city\n",
+       "first            0    birju              1200  muzaffarpur\n",
+       "second           1  raushan               600    darbhanga\n",
+       "third            2  chandan               700    darbhanga\n",
+       "fourth           3      sam              1300        patna"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "birju"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "0c409063-f52c-40c3-ba34-9fa2113b4a94",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "C:\\Users\\birju\\AppData\\Local\\Temp\\ipykernel_18912\\3866876451.py:1: UserWarning: Pandas doesn't allow columns to be created via a new attribute name - see https://pandas.pydata.org/pandas-docs/stable/indexing.html#attribute-access\n",
+      "  birju.row=['first','second','third','fourth']\n"
+     ]
+    }
+   ],
+   "source": [
+    "birju.row=['first','second','third','fourth']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "16982a6b-d0bb-4b1e-acae-dc5f21387d4b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
