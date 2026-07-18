@@ -5,6 +5,7 @@ print("Program Started")
 if 10 > 5:
     print("10 is greater than 5")
     print("These two lines are inside the if block")
+    
 # This line is outside the if block (no space)
 print("This is outside the if block")
 
