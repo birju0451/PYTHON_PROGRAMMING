@@ -2,9 +2,10 @@
 # ord() returns the Unicode (ASCII) value of a character
 
 char = 'a'
+print(type(char))
 print("Character:", char, "-> ASCII value:", ord(char))  # a = 97
 
-char = ' '   # space character
+char = ' '  # space character
 print("Character: space -> ASCII value:", ord(char))     # space = 32
 
 char = '0'
