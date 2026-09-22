@@ -16,3 +16,7 @@ print(type(b))
 c=str(b)
 print(c)
 print(type(c))
+
+x = "100"
+print(int(100))
+print(float(100))

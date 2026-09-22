@@ -1,11 +1,7 @@
-# n=input("enter a number")
-# number=int(n)
-# print(number)
-condition=int(input("enter 1(true) for take and 0(false) for dont take:"))
-if rain:=condition:
-    print("take umbrella")
+rain = 1
+condition = int(input("Enter 1 (true) for take and 0 (false) for don't take: "))
+
+if rain == condition:
+    print("Take umbrella")
 else:
-    print("dont take umbrella")    
-
-
-
+    print("Don't take umbrella")

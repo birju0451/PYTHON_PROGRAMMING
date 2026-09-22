@@ -7,4 +7,4 @@ c_str=str(c)
 
 final_result=a_str+b_str+c_str
 final_int=int(final_result)
-print("final integer value:",final_int,type(final_int),sep="-")
+print("final integer value:",final_int,type(final_int),sep="-------->")
