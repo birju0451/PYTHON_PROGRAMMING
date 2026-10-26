@@ -1,0 +1,123 @@
+PYTHON: 100 PROGRAMS ACROSS ALL MODULES
+Use this as a practice checklist. Try each program before checking a solution.
+
+01 BASICS & INPUT/OUTPUT
+1. Print formatted student details using input values.
+2. Read two integers and print sum, difference, product, and quotient.
+3. Convert a temperature from Celsius to Fahrenheit.
+4. Calculate area and circumference of a circle.
+5. Swap two variables without using a third variable.
+6. Convert total seconds into hours, minutes, and seconds.
+7. Calculate simple and compound interest.
+8. Convert an integer to float and a numeric string to integer.
+9. Print a sentence with newline, tab, and escaped quotation marks.
+10. Calculate the average of three numbers with formatted output.
+
+02 VARIABLES, OPERATORS & TYPE CONVERSION
+11. Calculate the last digit and remove the last digit of an integer.
+12. Check whether a number is divisible by both 3 and 5.
+13. Evaluate a mathematical expression using operator precedence.
+14. Exchange values of two variables using tuple unpacking.
+15. Calculate quotient and remainder using // and %.
+16. Convert minutes into days, hours, and minutes.
+17. Use comparison operators to compare two numbers.
+18. Demonstrate logical operators with three boolean conditions.
+19. Calculate the square, cube, and square root of a positive number.
+20. Read a numeric string and safely convert it to an integer.
+
+03 CONDITIONAL STATEMENTS
+21. Check whether an integer is even or odd.
+22. Find the largest of three numbers without using max().
+23. Check whether a year is a leap year.
+24. Assign a grade from marks using a clear grading scale.
+25. Calculate an electricity bill using slab rates.
+26. Check whether three sides form a valid triangle.
+27. Classify a triangle as equilateral, isosceles, or scalene.
+28. Build a calculator using if/elif for +, -, *, and /.
+29. Check whether a character is a vowel, consonant, digit, or symbol.
+30. Calculate a discount based on purchase amount.
+
+04 LOOPS & NUMBER PROBLEMS
+31. Find the sum of integers from 1 to N.
+32. Calculate factorial using a loop.
+33. Reverse an integer.
+34. Check whether an integer is a palindrome.
+35. Calculate the sum of digits of an integer.
+36. Count the digits in an integer.
+37. Check whether a number is prime.
+38. Print all prime numbers in a given range.
+39. Print the Fibonacci sequence up to N terms.
+40. Check whether a number is an Armstrong number.
+
+05 PATTERN PRINTING
+41. Print a solid square of stars.
+42. Print a right-angled triangle of stars.
+43. Print an inverted right-angled triangle.
+44. Print a centered pyramid of stars.
+45. Print a diamond pattern of stars.
+46. Print a triangle of increasing numbers.
+47. Print Floyd's triangle.
+48. Print a 0-1 triangle pattern.
+49. Print a hollow square pattern.
+50. Print a multiplication grid from 1 through N.
+
+06 PYTHON COLLECTIONS: LIST, TUPLE, SET, DICTIONARY
+51. Create a list and calculate its sum, minimum, and maximum.
+52. Remove duplicate values from a list while preserving order.
+53. Find the second-largest distinct value in a list.
+54. Rotate a list to the right by K positions.
+55. Merge two lists and return their common unique elements.
+56. Convert a list of pairs into a dictionary.
+57. Count the frequency of each element using a dictionary.
+58. Find the union, intersection, and difference of two sets.
+59. Sort a list of tuples by the second element.
+60. Group a list of words by their first character using a dictionary.
+
+07 STRINGS
+61. Reverse a string without using slicing.
+62. Check whether a string is a palindrome, ignoring case.
+63. Count vowels, consonants, digits, and spaces in a string.
+64. Find the first non-repeating character.
+65. Check whether two strings are anagrams.
+66. Remove duplicate characters while preserving order.
+67. Find the longest word in a sentence.
+68. Count occurrences of each word in a sentence.
+69. Compress repeated characters, such as aaabb to a3b2.
+70. Find the longest common prefix in a list of strings.
+
+08 FUNCTIONS & RECURSION
+71. Write a function that returns the greatest common divisor of two integers.
+72. Write a function that returns all divisors of a number.
+73. Calculate factorial using recursion.
+74. Calculate the nth Fibonacci number using recursion.
+75. Find the sum of a list using a recursive function.
+76. Write a function accepting a variable number of positional arguments.
+77. Write a function using keyword arguments to format a person's profile.
+78. Use a lambda function to sort tuples by their second value.
+79. Write a recursive function to reverse a string.
+80. Implement binary search using recursion.
+
+09 MODULES, EXCEPTIONS & FILE HANDLING
+81. Import math and calculate the square root and ceiling of a number.
+82. Use the random module to simulate a dice roll.
+83. Create a reusable module with arithmetic functions and import it.
+84. Handle division by zero using try/except.
+85. Validate integer input and keep asking until valid input is entered.
+86. Write a list of names to a text file.
+87. Read a file and count its lines, words, and characters.
+88. Copy the contents of one text file into another.
+89. Append a timestamped note to a log file.
+90. Read a CSV file and calculate the average of a numeric column.
+
+10 OBJECT-ORIENTED PROGRAMMING
+91. Create a Student class with fields and a method to display details.
+92. Create a Rectangle class with area and perimeter methods.
+93. Create a BankAccount class with deposit and withdrawal methods.
+94. Demonstrate instance variables and class variables.
+95. Use __init__() to initialize a Product object.
+96. Demonstrate inheritance with Person and Student classes.
+97. Override a method in a child class.
+98. Use encapsulation to validate a bank account balance.
+99. Create an abstract Shape class with Circle and Rectangle subclasses.
+100. Overload behavior using a dunder method such as __str__ or __add__.
+
